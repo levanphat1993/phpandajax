@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This is an HTML canvas</title>
+    <style media="screen">
+        body {
+            text-align: center;
+            font-family: sans-serif;
+        }
+        canvas {
+            background-color: black;
+        }
+    </style>
+</head>
+  <body>
+    <h1>This is an HTML canvas</h1>
+    <canvas id="asteroids" width="400" height="400"></canvas>
+  </body>
+  <script>
+    // Find the Canvas Element
+    var canvas = document.getElementById("asteroids");
+    // Create a Drawing Object
+    var context = canvas.getContext("2d");
+    // Set the fill style of the drawing object to the color
+    context.fillStyle = 'dimgrey';
+    // Fill with lightgrey
+    context.strokeStyle = 'lightgrey';
+    context.lineWidth = 5;
+    // Create  rectangles with the rect() method
+    context.rect(75, 50, canvas.width - 150, canvas.height - 100);
+    // Draws 
+    context.stroke();
+    context.fill();
+  </script>
+</html>
