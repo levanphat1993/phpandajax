@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This is an HTML canvas</title>
+    <style media="screen">
+        body {
+            text-align: center;
+            font-family: sans-serif;
+        }
+        canvas {
+            background-color: black;
+        }
+    </style>
+</head>
+  <body>
+    <h1>This is an HTML canvas</h1>
+    <canvas id="asteroids" width="400" height="400"></canvas>
+  </body>
+  <script>
+
+    console.log( (10 % 50 == 0) ? 1 : 0);
+
+    // Find the Canvas Element
+    var canvas = document.getElementById("asteroids");
+    // Create a Drawing Object
+    var context = canvas.getContext("2d");
+    
+    // Grid drawing 
+
+    context.strokeStyle = "#00FF00";
+    context.fillStyle = "#009900";
+
+    for(var x = 0; x < canvas.width; x += 10) {
+    
+        context.beginPath();
+        context.moveTo(x, 0);
+        context.lineTo(x, canvas.height);
+        context.lineWidth = (x % 50 == 0) ? 0.5 : 0.25;
+
+        // fill text on grid
+        if (x % 50 == 0) {
+            context.fillText(x, x, 10);
+        } 
+
+        context.stroke();
+    }
+
+    for(var y = 0; y < canvas.height; y += 10) {
+        context.beginPath();
+        context.moveTo(0, y);
+        context.lineTo(canvas.width, y);
+        context.lineWidth = (y % 50 == 0) ? 0.5 : 0.25;
+
+        // fill text on grid
+        if (y % 50 == 0) {
+            context.fillText(y , 0 ,  y, 10);
+        } 
+
+        context.stroke();
+    }
+
+    // Draws 
+    context.stroke();
+    context.fill();
+
+  </script>
+</html>
